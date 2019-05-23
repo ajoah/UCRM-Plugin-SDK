@@ -120,7 +120,7 @@ class UcrmApi
             ]
         );
         
-        if(current($response->getHeader('Content-Type')) === 'application/json'){
+        if ($response->getHeaderLine('content-type') === 'application/json') {
             return Json::decode((string) $response->getBody());
         }
 
